@@ -1,9 +1,8 @@
 # apijson-surrealdb  [![](https://jitpack.io/v/APIJSON/apijson-surrealdb.svg)](https://jitpack.io/#APIJSON/apijson-surrealdb)
-腾讯 [APIJSON](https://github.com/Tencent/APIJSON) 6.1.0+ 的 SurrealDB 数据库插件，可通过 Maven, Gradle 等远程依赖。<br />
-An SurrealDB plugin for Tencent [APIJSON](https://github.com/Tencent/APIJSON) 6.1.0+
+腾讯 [APIJSON](https://github.com/Tencent/APIJSON) 7.4.0+ 的 SurrealDB 数据库插件，可通过 Maven, Gradle 等远程依赖。<br />
+An SurrealDB plugin for Tencent [APIJSON](https://github.com/Tencent/APIJSON) 7.4.0+
 
-![image](https://github.com/APIJSON/apijson-surrealdb/assets/5738175/243d7a46-e035-4fe6-be63-51cb54d4a69d)
-![image](https://github.com/APIJSON/apijson-surrealdb/assets/5738175/3c2919b6-f90a-4a9e-9fb7-592eb4c1a6bb)
+![image](https://github.com/user-attachments/assets/a354661a-d5a7-4902-ab06-fada169a292c)
 
 
 ## 添加依赖
@@ -89,14 +88,14 @@ Override execute in your SQLConfig extends AbstractSQLConfig
 
 ```java
 	@Override
-    public String getNamespace() {
-        return SurrealDBUtil.getNamespace(super.getNamespace(), DEFAULT_NAMESPACE, isSurrealDB());
-    }
+	public String getNamespace() {
+		return SurrealDBUtil.getNamespace(super.getNamespace(), DEFAULT_NAMESPACE, isSurrealDB());
+	}
 
-    @Override
-    public String getSQLNamespace() {
-        return SurrealDBUtil.getSQLNamespace(super.getSQLNamespace(), isSurrealDB());
-    }
+	@Override
+	public String getSQLNamespace() {
+		return SurrealDBUtil.getSQLNamespace(super.getSQLNamespace(), isSurrealDB());
+	}
         
 	@Override
 	public String getSchema() {
