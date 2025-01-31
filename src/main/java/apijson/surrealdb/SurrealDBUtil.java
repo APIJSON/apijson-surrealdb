@@ -178,15 +178,16 @@ public class SurrealDBUtil {
         return result.getIntValue(JSONResponse.KEY_COUNT);
     }
 
-    public static <T> JSONObject executeUpdate(SQLConfig<T> config, String sql) throws Exception {
+    public static <T> JSONObject executeUpdate(@NotNull SQLConfig<T> config, String sql) throws Exception {
         return executeUpdate(null, config, sql);
     }
-    public static <T> JSONObject executeUpdate(Surreal client, SQLConfig<T> config, String sql) throws Exception {
+    public static <T> JSONObject executeUpdate(Surreal client, @NotNull SQLConfig<T> config, String sql) throws Exception {
         if (client == null) {
             client = getClient(config);
         }
 
-//       TODO client.update(StringUtil.isEmpty(sql) ? config.getSQL(false) : sql);
+        List<JSONObject> list = executeQuery(config, sql, false);
+        // 返回的是当前插入的表记录  JSONObject first = list == null || list.isEmpty() ? null : list.get(0);
 
         JSONObject result = AbstractParser.newSuccessResult();
 
