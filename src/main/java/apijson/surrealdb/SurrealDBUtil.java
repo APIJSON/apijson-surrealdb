@@ -206,12 +206,8 @@ public class SurrealDBUtil {
                 result.put(idKey + "[]", idIn);
             }
 
-            if (method == RequestMethod.PUT) {
-                Map<String, Object> content = config.getContent();
-                result.put(JSONResponse.KEY_COUNT, content == null ? 0 : content.size());
-            } else {
-                result.put(JSONResponse.KEY_COUNT, id == null && idIn instanceof Collection ? ((Collection<?>) idIn).size() : 1); // FIXME 直接 SQLAuto 传 Flux/InfluxQL INSERT 如何取数量？
-            }
+            // FIXME 直接 SQLAuto 传 Flux/InfluxQL INSERT 如何取数量？
+            result.put(JSONResponse.KEY_COUNT, id == null && idIn instanceof Collection ? ((Collection<?>) idIn).size() : 1);
         }
 
         return result;
