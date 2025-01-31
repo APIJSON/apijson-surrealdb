@@ -3,6 +3,7 @@
 An SurrealDB plugin for Tencent [APIJSON](https://github.com/Tencent/APIJSON) 7.4.0+
 
 ![image](https://github.com/user-attachments/assets/a354661a-d5a7-4902-ab06-fada169a292c)
+![image](https://github.com/user-attachments/assets/8ef690e6-8367-4882-9f73-ec610a116e13)
 
 
 ## 添加依赖
